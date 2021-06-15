@@ -3,52 +3,19 @@ CIS 120 final project
 
 ## Core Concepts
 
-List the four core concepts, the features they implement, and why each feature 
-is an appropriate use of the concept. Incorporate the feedback you got after 
-submitting your proposal.
+List the four core concepts, the features they implement, and why each feature is an appropriate use of the concept. Incorporate the feedback you got after submitting your proposal.
 
   1. 2D Arrays
-  		- I used a 2D int array to represent the grid of tiles; this is a good model
-  		for the game because the graphical appearance of each tile as well as its
-  		behavior when it collides with other tiles rely solely on its value. So the 
-  		2D array of tile values can simply be updated in place according to user 
-  		input (arrow key presses to slide the tiles and mouse clicks on buttons to 
-  		undo moves, save one game, or import the saved game). This is also preferable 
-  		to my earlier idea for implementation, which was to represent the grid as a 
-  		2D array of Tile objects, each having its own move history. This would have 
-  		been much more computationally expensive and more complicated to establish 
-  		logic for. 
+  		- I used a 2D int array to represent the grid of tiles; this is a good model for the game because the graphical appearance of each tile as well as its behavior when it collides with other tiles rely solely on its value. So the 2D array of tile values can simply be updated in place according to user input (arrow key presses to slide the tiles and mouse clicks on buttons to undo moves, save one game, or import the saved game). This is also preferable to my earlier idea for implementation, which was to represent the grid as a 2D array of Tile objects, each having its own move history. This would have been much more computationally expensive and more complicated to establish logic for. 
 
   2. Collections
-  		- I used two LinkedLists, one containing 2D int arrays to store previous tile 
-  		arrangements and one containing ints to store previous scores. When the user 
-  		makes a move, the new tile arrangement and score are computed and the model
-  		is updated accordingly, and if the new state is different from the previous 
-  		state, then the previous tile arrangement and score get added to the head of 
-  		the appropriate LinkedLists. Whenever the user undoes a move, the game state 
-  		gets updated to the tile arrangement and score at the heads of the LinkedLists, 
-  		and those values are then removed from the LinkedLists. The user can undo all 
-  		their moves up to and including the first one, after which the LinkedLists 
-  		will be empty and subsequent calls to Undo won't do anything.
+  		- I used two LinkedLists, one containing 2D int arrays to store previous tile arrangements and one containing ints to store previous scores. When the user makes a move, the new tile arrangement and score are computed and the model is updated accordingly, and if the new state is different from the previous state, then the previous tile arrangement and score get added to the head of the appropriate LinkedLists. Whenever the user undoes a move, the game state gets updated to the tile arrangement and score at the heads of the LinkedLists, and those values are then removed from the LinkedLists. The user can undo all their moves up to and including the first one, after which the LinkedLists will be empty and subsequent calls to Undo won't do anything.
   		
   3. File I/O
-  		- I used a FileWriter and FileReader to save and import game states: the 
-  		SavedGameOf2048.txt file gets overwritten to contain the current score and 
-  		tile arrangement any time the user clicks the Save button (so only one game 
-  		state can be saved at any given point of time) and the gamestate is set to 
-  		the last saved gamestate whenever the user clicks the Import button (but the 
-  		move history is neither saved nor imported). I had originally planned to have 
-  		a number of tools (e.g. undo, tile cleaner, etc.), each in limited quantities, 
-  		but since I ended up implementing the overall undo functionality such that the 
-  		entire move history is recorded in LinkedLists, as opposed to only the most 
-  		recent move being stored as originally planned, I decided not to implement 
-  		the other tools.
+  		- I used a FileWriter and FileReader to save and import game states: the SavedGameOf2048.txt file gets overwritten to contain the current score and tile arrangement any time the user clicks the Save button (so only one game state can be saved at any given point of time) and the gamestate is set to the last saved gamestate whenever the user clicks the Import button (but the move history is neither saved nor imported). I had originally planned to have a number of tools (e.g. undo, tile cleaner, etc.), each in limited quantities, but since I ended up implementing the overall undo functionality such that the entire move history is recorded in LinkedLists, as opposed to only the most recent move being stored as originally planned, I decided not to implement the other tools.
 
   4. Testable Component
-  		- I used a model-view-controller design for this implementation of 2048, so the
-  		model (which is entirely independent of the graphics) is JUnit-testable. I 
-  		tested for responses of the model to user input (both keyboard and mouse click), 
-  		mostly with respect to the updating of the game state.
+  		- I used a model-view-controller design for this implementation of 2048, so the model (which is entirely independent of the graphics) is JUnit-testable. I tested for responses of the model to user input (both keyboard and mouse click), mostly with respect to the updating of the game state.
 
 ## Your Implementation
 
