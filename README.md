@@ -54,32 +54,18 @@ submitting your proposal.
 
 Provide an overview of each of the classes in your code, and what their 
 function is in the overall game.
-  	- Game.java
-  		- This class implements Runnable and contains the main method that runs the 
-  		game. It first gives a pop-up window (JOptionPane) with instructions. It 
-  		then creates a window with the Reset, Undo, Save, and Import buttons at the 
-  		top, the game status (including current score) at the bottom, and the tile 
-  		grid in the center. It registers mouse clicks and calls on Board2048.java to 
-  		carry out the functionality.
-  	- Board2048.java
-  		- This class extends JPanel; it paints all of the tiles to the grid section of 
-  		the window and handles key presses and the mouse clicks registered by 
-  		Game.java, calling functions in the model to update the game state 
-  		appropriately.
-  	- Model.java
-  		- This class contains the model for the game, which updates the game state after 
-  		every occurrence of user input, passed on by Board2048.java. Explanations for 
-  		game logic are given in comments above the relevant functions within this class.
-  	- ModelTest.java
-  		- This file contains the JUnit tests for Model.java.
-  	- Tile2048.java
-  		- This class basically decides what each tile looks like; the paintComponent 
-  		function in Board2048.java contains a nested for loop that iterates through each 
-  		entry in the 2D array containing the current tile arrangement, creates a 
-  		Tile2048 object for each one, and paints it at the appropriate coordinates.
-  	- SavedGameOf2048.txt
-		- This is the .txt file that game states are saved to and imported from as 
-		described earlier.
+- Game.java
+	- This class implements Runnable and contains the main method that runs the game. It first gives a pop-up window (JOptionPane) with instructions. It then creates a window with the Reset, Undo, Save, and Import buttons at the top, the game status (including current score) at the bottom, and the tile grid in the center. It registers mouse clicks and calls on Board2048.java to carry out the functionality.
+- Board2048.java
+	- This class extends JPanel; it paints all of the tiles to the grid section of the window and handles key presses and the mouse clicks registered by Game.java, calling functions in the model to update the game state appropriately.
+- Model.java
+	- This class contains the model for the game, which updates the game state after every occurrence of user input, passed on by Board2048.java. Explanations for game logic are given in comments above the relevant functions within this class.
+- ModelTest.java
+	- This file contains the JUnit tests for Model.java.
+- Tile2048.java
+	- This class basically decides what each tile looks like; the paintComponent function in Board2048.java contains a nested for loop that iterates through each entry in the 2D array containing the current tile arrangement, creates a Tile2048 object for each one, and paints it at the appropriate coordinates.
+- SavedGameOf2048.txt
+	- This is the .txt file that game states are saved to and imported from as described earlier.
 
 Were there any significant stumbling blocks while you were implementing your 
 game (related to your design, or otherwise)?
