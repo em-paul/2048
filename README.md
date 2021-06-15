@@ -1,5 +1,5 @@
 # 2048
-CIS 120 final project
+CIS 120 final project (Fall 2020)
 
 ## Core Concepts
 
